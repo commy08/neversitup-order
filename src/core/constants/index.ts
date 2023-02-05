@@ -1,0 +1,4 @@
+export const SEQUELIZE = 'SEQUELIZE';
+export const DEVELOPMENT = 'development';
+export const ORDER_REPOSITORY = 'ORDER_REPOSITORY';
+export const ORDER_DETAIL_REPOSITORY = 'ORDER_DETAIL_REPOSITORY';

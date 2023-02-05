@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "b1c23994-1ccd-4d1c-b859-613560d13f95",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25004155"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiZmlyc3ROYW1lIiwibGFzdE5hbWUiOiJsYXN0TmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY28iLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJpYXQiOjE2NzU1OTg3NjEsImV4cCI6MTY3NTYwMjM2MX0.bH2zmh65XBr63xiovBxJW0Dpul8R02MmaV2FwmbBuS8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orders\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 5\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orders\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 5\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "392"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"188-19vehXD73N/kOWaRhwWN/R45/ZI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Feb 2023 12:27:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"order\": {\n        \"id\": 3,\n        \"userId\": 1,\n        \"status\": \"init\",\n        \"updatedAt\": \"2023-02-05T12:27:49.606Z\",\n        \"createdAt\": \"2023-02-05T12:27:49.606Z\",\n        \"orderDetails\": [\n            {\n                \"id\": 5,\n                \"productId\": 1,\n                \"quantity\": 5,\n                \"orderId\": 3,\n                \"createdAt\": \"2023-02-05T12:27:49.620Z\",\n                \"updatedAt\": \"2023-02-05T12:27:49.620Z\"\n            },\n            {\n                \"id\": 6,\n                \"productId\": 2,\n                \"quantity\": 2,\n                \"orderId\": 3,\n                \"createdAt\": \"2023-02-05T12:27:49.620Z\",\n                \"updatedAt\": \"2023-02-05T12:27:49.620Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiZmlyc3ROYW1lIiwibGFzdE5hbWUiOiJsYXN0TmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY28iLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJpYXQiOjE2NzU1OTg3NjEsImV4cCI6MTY3NTYwMjM2MX0.bH2zmh65XBr63xiovBxJW0Dpul8R02MmaV2FwmbBuS8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orders\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 5\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Order",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orders/1/cancel",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"73-7j2T1ZF6rXWCDSrPX1eat+dRoqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Feb 2023 12:32:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"userId\": 1,\n    \"status\": \"cancel\",\n    \"createdAt\": \"2023-02-05T12:25:45.350Z\",\n    \"updatedAt\": \"2023-02-05T12:32:11.273Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get order by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiZmlyc3ROYW1lIiwibGFzdE5hbWUiOiJsYXN0TmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY28iLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJpYXQiOjE2NzU1OTg3NjEsImV4cCI6MTY3NTYwMjM2MX0.bH2zmh65XBr63xiovBxJW0Dpul8R02MmaV2FwmbBuS8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get order by user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1080"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"438-c6EPxW9MNAGtyD7OZhgpmgdlI+A\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Feb 2023 12:57:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"userId\": 1,\n        \"status\": \"cancel\",\n        \"createdAt\": \"2023-02-05T12:25:45.350Z\",\n        \"updatedAt\": \"2023-02-05T12:32:11.273Z\",\n        \"orderDetails\": [\n            {\n                \"id\": 1,\n                \"productId\": 1,\n                \"quantity\": 2,\n                \"createdAt\": \"2023-02-05T12:25:45.388Z\",\n                \"updatedAt\": \"2023-02-05T12:25:45.388Z\"\n            },\n            {\n                \"id\": 2,\n                \"productId\": 2,\n                \"quantity\": 3,\n                \"createdAt\": \"2023-02-05T12:25:45.388Z\",\n                \"updatedAt\": \"2023-02-05T12:25:45.388Z\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"userId\": 1,\n        \"status\": \"init\",\n        \"createdAt\": \"2023-02-05T12:27:16.108Z\",\n        \"updatedAt\": \"2023-02-05T12:27:16.108Z\",\n        \"orderDetails\": [\n            {\n                \"id\": 3,\n                \"productId\": 1,\n                \"quantity\": 5,\n                \"createdAt\": \"2023-02-05T12:27:16.135Z\",\n                \"updatedAt\": \"2023-02-05T12:27:16.135Z\"\n            },\n            {\n                \"id\": 4,\n                \"productId\": 2,\n                \"quantity\": 2,\n                \"createdAt\": \"2023-02-05T12:27:16.135Z\",\n                \"updatedAt\": \"2023-02-05T12:27:16.135Z\"\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"userId\": 1,\n        \"status\": \"init\",\n        \"createdAt\": \"2023-02-05T12:27:49.606Z\",\n        \"updatedAt\": \"2023-02-05T12:27:49.606Z\",\n        \"orderDetails\": [\n            {\n                \"id\": 5,\n                \"productId\": 1,\n                \"quantity\": 5,\n                \"createdAt\": \"2023-02-05T12:27:49.620Z\",\n                \"updatedAt\": \"2023-02-05T12:27:49.620Z\"\n            },\n            {\n                \"id\": 6,\n                \"productId\": 2,\n                \"quantity\": 2,\n                \"createdAt\": \"2023-02-05T12:27:49.620Z\",\n                \"updatedAt\": \"2023-02-05T12:27:49.620Z\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get order by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiZmlyc3ROYW1lIiwibGFzdE5hbWUiOiJsYXN0TmFtZSIsImVtYWlsIjoiZW1haWxAZW1haWwuY28iLCJjcmVhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJ1cGRhdGVkQXQiOiIyMDIzLTAyLTA1VDA4OjQwOjUxLjExNFoiLCJpYXQiOjE2NzU1OTg3NjEsImV4cCI6MTY3NTYwMjM2MX0.bH2zmh65XBr63xiovBxJW0Dpul8R02MmaV2FwmbBuS8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get order by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orders/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "360"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"168-9npzZjb3KfisNeSjrdtkTjLKphg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Feb 2023 12:57:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"userId\": 1,\n    \"status\": \"cancel\",\n    \"createdAt\": \"2023-02-05T12:25:45.350Z\",\n    \"updatedAt\": \"2023-02-05T12:32:11.273Z\",\n    \"orderDetails\": [\n        {\n            \"id\": 1,\n            \"productId\": 1,\n            \"quantity\": 2,\n            \"createdAt\": \"2023-02-05T12:25:45.388Z\",\n            \"updatedAt\": \"2023-02-05T12:25:45.388Z\"\n        },\n        {\n            \"id\": 2,\n            \"productId\": 2,\n            \"quantity\": 3,\n            \"createdAt\": \"2023-02-05T12:25:45.388Z\",\n            \"updatedAt\": \"2023-02-05T12:25:45.388Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
